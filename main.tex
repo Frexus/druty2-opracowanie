@@ -41,7 +41,7 @@ $V_{CE}$ & $> 200mV$ & $< 200mV$\\
 \includegraphics[width=0.5\textwidth]{char}
 \end{figure}
 
-Obrazek niezbyt fortynny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
+Obrazek niezbyt fortunny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
 
 
 $g_m$ - transkonduktancja
@@ -269,6 +269,17 @@ $k_u$ & $g_m (r_{ce}\parallel R_C)$ & $(g_m + g_{mb})(r_{ds}\parallel R_D)$  \\
 $k_i$ & $<1$ & $1$  \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} duże - dobrze!
+	\item \textbf{$r_i$} mała - źle :(
+	\item \textbf{$r_o$} duża - źle :(
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Są wolne od efektu Millera więc może być wykorzystany we wzmacniaczach wysokiej częstotliwości
+\end{enumerate}
 
 \subsection{Wspólne źródło (emiter)}
 
@@ -326,6 +337,17 @@ $k_u$ & $-g_m (r_{ce}\parallel R_C)$ & $-g_m(r_{ds}\parallel R_D)$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} duże - dobrze!
+	\item \textbf{$r_i$} duża - dobrze!
+	\item \textbf{$r_o$} duża - źle :(
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Często jako wzmacniacz napięcia, szczególnie w zakresie niezbyt wysokich częstotliwości granicznych
+\end{enumerate}
 
 \subsection{Wspólny dren (kolektor)}
 
@@ -435,6 +457,18 @@ $k_u$ & $\dfrac{g_m}{g_m+\dfrac{1}{R_E}}$ & $\dfrac{g_m}{g_m+g_{mb}}$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} małe - źle :(
+	\item \textbf{$r_i$} duża - dobrze!
+	\item \textbf{$r_o$} mała - dobrze!
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Wysokie wzmocnienie prądowe - wykorzystywany tam gdzie potrzeba wysterowania następnych stopni wzmacniacza wymagających stosunkowo dużego sygnału prądowego
+	\item Jako stopień separujący
+\end{enumerate}
 
 
 \subsection{Zdegenerowane źródło(emiter)}
