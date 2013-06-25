@@ -539,6 +539,14 @@ Model małosygnałowy lustra dla tranzystorów bipolarnych(?) (uwaga: nie powinn
 \includegraphics[scale=0.8]{lustr_wyp1}
 \end{figure}
 
+Nie za bardzo wiadomo czemu obydwa źródła znikają ze schematu, ale wyjaśnienie rezystancji dodanej w miejsce źródła jest takie:
+
+\begin{equation}
+r_z = {U \over I} = {V_{gs} \over V_{gs}g_m} = {1 \over g_m}
+\end{equation}
+
+Źródeł prądowych $V_{bs}g_{mb}$ nie ma, bo źródło jest na masie, więc $V_{bs} = 0$.
+
 Ze względu na zwarcie przy pierwszym tranzystorze można zastąpić źródło sterowane:
 \begin{figure}[H]
 \centering
@@ -549,7 +557,10 @@ Ze względu na zwarcie przy pierwszym tranzystorze można zastąpić źródło s
 \includegraphics[scale=0.8]{lustr_wyp3}
 \end{figure}
 
-Rezystancja wyjściowa: $r_o = \dfrac{V}{I} = r_{ce2}$.
+Rezystancja wyjściowa: 
+\begin{equation}
+r_o = \dfrac{V}{I} = r_{ce2}
+\end{equation}
 
 \subsection{Kaskodowe źródło prądowe}
 \begin{figure}[H]
@@ -569,6 +580,14 @@ U&=I_o(r_{ds4}+g_{m4}r_{ds4}r_{ds2}+r_{ds2} \\
 r_{out}&=\dfrac{U}{I}=g_{m4}r_{ds4}r_{ds2}+r_{ds4}+r_{ds2}
 \end{align*}
 
+\subsection{Zastosowania luster}
+\subsubsection{Aktywne obciążenia}
+Po prostu zastępujemy Opornik źródłem prądowym.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{lustroZast}
+\end{figure}
+Kółeczka, czyli prąd idzie do tranzystora (PMOS). Chyba. Rezystancja to $r_ds \approx 100k \Omega$, czyli dużo 
 
 \section{Wzmacniacze mocy}
 \subsection{Klasa A}
