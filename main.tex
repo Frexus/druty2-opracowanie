@@ -41,7 +41,7 @@ $V_{CE}$ & $> 200mV$ & $< 200mV$\\
 \includegraphics[width=0.5\textwidth]{char.png}
 \end{figure}
 
-Obrazek niezbyt fortynny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
+Obrazek niezbyt fortunny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
 
 
 $g_m$ - transkonduktancja
@@ -269,6 +269,17 @@ $k_u$ & $g_m (r_{ce}\parallel R_C)$ & $(g_m + g_{mb})(r_{ds}\parallel R_D)$  \\
 $k_i$ & $<1$ & $1$  \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} duże - dobrze!
+	\item \textbf{$r_i$} mała - źle :(
+	\item \textbf{$r_o$} duża - źle :(
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Są wolne od efektu Millera więc może być wykorzystany we wzmacniaczach wysokiej częstotliwości
+\end{enumerate}
 
 \subsection{Wspólne źródło (emiter)}
 
@@ -326,6 +337,17 @@ $k_u$ & $-g_m (r_{ce}\parallel R_C)$ & $-g_m(r_{ds}\parallel R_D)$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} duże - dobrze!
+	\item \textbf{$r_i$} duża - dobrze!
+	\item \textbf{$r_o$} duża - źle :(
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Często jako wzmacniacz napięcia, szczególnie w zakresie niezbyt wysokich częstotliwości granicznych
+\end{enumerate}
 
 \subsection{Wspólny dren (kolektor)}
 
@@ -435,6 +457,18 @@ $k_u$ & $\dfrac{g_m}{g_m+\dfrac{1}{R_E}}$ & $\dfrac{g_m}{g_m+g_{mb}}$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
+\\
+\textbf{Cechy} (z grubsza dla obu modeli takie same):
+\begin{enumerate}
+	\item \textbf{$K_u$} małe - źle :(
+	\item \textbf{$r_i$} duża - dobrze!
+	\item \textbf{$r_o$} mała - dobrze!
+\end{enumerate}
+\textbf{Zastosowania:}
+\begin{enumerate}
+	\item Wysokie wzmocnienie prądowe - wykorzystywany tam gdzie potrzeba wysterowania następnych stopni wzmacniacza wymagających stosunkowo dużego sygnału prądowego
+	\item Jako stopień separujący
+\end{enumerate}
 
 
 \subsection{Zdegenerowane źródło(emiter)}
@@ -536,7 +570,7 @@ I_{REF}&=I_{C1}+2I_B=I_{C1}+\dfrac{2I_{C1}}{\beta}=I(1+\dfrac{2}{\beta}) \\
 Model małosygnałowy lustra dla tranzystorów bipolarnych(?) (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$):
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp1.png}
+\includegraphics[width=0.5\textwidth]{lustr_wyp1.png}
 \end{figure}
 
 Źródeł prądowych $V_{bs}g_{mb}$ nie ma, bo źródło jest na masie, więc $V_{bs} = 0$.
@@ -548,13 +582,13 @@ r_z = {U \over I} = {V_{gs1} \over V_{gs1}g_m} = {1 \over g_m}
 Czyli zastępujemy to źródło rezystancją:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp2.png}
+\includegraphics[width=0.5\textwidth]{lustr_wyp2.png}
 \end{figure}
 
 Nie wiadomo dlaczego drugie źródło jest równe 0 (prawdopodobnie te dwa źródła prądowe się w praktyce znoszą, a tylko jedno działa jak rezystancja, bo jest na nim napięcie), w każdym razie schemat wygląda teraz tak:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp3.png}
+\includegraphics[width=0.5\textwidth]{lustr_wyp3.png}
 \end{figure}
 
 Rezystancja wyjściowa: 
@@ -565,13 +599,13 @@ r_o = \dfrac{V}{I} = r_{ce2}
 \subsection{Kaskodowe źródło prądowe}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{kaskoda.png}
+\includegraphics[width=0.5\textwidth]{kaskoda.png}
 \end{figure}
 
 Model małosygnałowy kaskody dla polowych (gałąź z $1/g_{m}$ robi się analogicznie jak w lustrze):
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{kaskoda_wypr.png}
+\includegraphics[width=0.5\textwidth]{kaskoda_wypr.png}
 \end{figure}
 \begin{align*}
 U&=(I_o-g_{m4}V_{gs4})r_{ds4}+I_o r_{ds2} \\
@@ -593,8 +627,8 @@ Kółeczka, czyli prąd idzie do tranzystora (PMOS). Chyba. Rezystancja to $r_ds
 \subsection{Klasa A}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_a.png}
-\includegraphics[scale=0.5]{wzm_moc_a_wyk.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_a.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_a_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Najprostszy wzmacniacz mocy}
@@ -623,8 +657,8 @@ max(V_o)\rightarrow V_{cc}, max(\dfrac{V_O}{R_L})\rightarrow I_B \quad \rightarr
 \subsection{Klasa B}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_b.png}
-\includegraphics[scale=0.5]{wzm_moc_b_wyk.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_b.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_b_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Nie pobiera mocy w stanie statycznym}
@@ -645,8 +679,8 @@ P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L}
 \subsection{Klasa AB}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_ab.png}
-\includegraphics[scale=0.5]{wzm_moc_ab_wyk.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_ab.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_ab_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Energia tracona na tranzystorach}
@@ -657,7 +691,7 @@ P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L}
 \subsection{Klasa D}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_d.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_d.png}
 \end{figure}
 \begin{itemize}
 \item{Tranzystory działają jak klucz}
@@ -674,7 +708,7 @@ Właściwości:
 \end{itemize}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy.png}
+\includegraphics[width=0.5\textwidth]{roznicowy.png}
 \end{figure}
 
 \subsection{Analiza małosygnałowa}
@@ -701,7 +735,7 @@ v_{o2}&=v_{oc}-\dfrac{v_{od}}{2}
 Wprowadzamy powyższe zależności do schematu.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_nowe_oznaczenia.png}
+\includegraphics[width=0.5\textwidth]{roznicowy_nowe_oznaczenia.png}
 \end{figure}
 
 \subsubsection{Wzmocnienie różnicowe}
@@ -709,14 +743,14 @@ Wprowadzamy powyższe zależności do schematu.
 Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_roznica.png}
+\includegraphics[width=0.5\textwidth]{roznicowy_roznica.png}
 \end{figure}
 
 Mamy tylko sygnał różnicowy. Potencjał przy gałęzi ze wspólnymi źródłami się nie zmieni przy zmianach napięcia $V_{id}$, więc zwieramy go do masy. Układ jest symetryczny, więc analizujemy tylko połówkę:
 \begin{figure}[H]
 \centering
 
-\includegraphics[scale=1]{roznicowy_roznica_malosyg.png}
+\includegraphics[width=0.5\textwidth]{roznicowy_roznica_malosyg.png}
 \end{figure}
 
 Po \textbf{prostych} obliczeniach:
@@ -732,13 +766,13 @@ $A_{dm}$ to \textbf{wzmocnienie różnicowe} (wzmocnienie układu dla symetryczn
 Chcemy tylko sygnał współbieżny, więc tym razem zwieramy do masy oba źródła $V_{id}$. Prąd $I_{B}$ nie płynie, ponieważ mamy dwie identyczne połówki zasilane tym samym napięciem - rozwieramy. $V_{o1}$ i $V_{o2}$ są takie same. 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_wsp.png}
+\includegraphics[width=0.5\textwidth]{roznicowy_wsp.png}
 \end{figure}
 
 Opór $R_{Z}$ musimy podzielić tak, żeby układ był symetryczny. Zastępujemy go więc równoległym połączeniem oporów $2R_{Z}$. Mamy układ symetryczny, analizujemy tylko jedną połówkę.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_wsp_malosyg.png}
+\includegraphics[width=0.5\textwidth]{roznicowy_wsp_malosyg.png}
 \end{figure}
 
 \begin{align*}
@@ -778,10 +812,10 @@ CMMR=\dfrac{A_{dm}}{A_{cm}}
 
 \section{Realizacja funkcji i wymiarowanie w CMOS}
 Suma (alternatywa):
-\includegraphics[scale=0.5]{suma.png}
+\includegraphics[width=0.5\textwidth]{suma.png}
 
 Iloczyn (koniunkcja):
-\includegraphics[scale=0.5]{iloczyn.png}
+\includegraphics[width=0.5\textwidth]{iloczyn.png}
 
 Analogicznie na pMOS-ach, z tym, że elementy są negowane.
 \subsection{Jak robimy funkcję}
@@ -799,8 +833,8 @@ Mamy układ na nMOS-ach, teraz musimy zrobić na pMOS-ach. Na pMOS-ach realizuje
 Połączenie szeregowe - mnożymy x2, równoległe - przechodzi bez zmian:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{wymiar_szer.png}
-\includegraphics[scale=0.5]{wymiar_rown.png}
+\includegraphics[width=0.5\textwidth]{wymiar_szer.png}
+\includegraphics[width=0.5\textwidth]{wymiar_rown.png}
 \end{figure}
 
 Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfrac{2W}{L}$, ponieważ chcemy, żeby narastanie i opadanie było tak samo szybkie (na pMOS-ie musi być szerszy kanał).
@@ -808,7 +842,7 @@ Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfr
 Dla przykładu wymiarowanie powyższego układu:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{F_wymiar.png}
+\includegraphics[width=0.5\textwidth]{F_wymiar.png}
 \end{figure}
 
 \end{document}
