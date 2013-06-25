@@ -553,7 +553,7 @@ Służą do:
 \item{polaryzacji}
 \item{jako aktywne obciążenia}
 \end{itemize}
-\textbf{Wszystkie poniższe schematy można zrobić też na tranzystorach polowych.}
+\textbf{Wszystkie poniższe schematy można zrobić też na tranzystorach bipolarnych.}
 
 \subsection{Bufor(?)}
 
@@ -567,7 +567,7 @@ I_{REF}&=I_{C1}+2I_B=I_{C1}+\dfrac{2I_{C1}}{\beta}=I(1+\dfrac{2}{\beta}) \\
 \dfrac{I}{I_{REF}}&=\dfrac{1}{1+\dfrac{2}{\beta}}
 \end{align*}
 
-Model małosygnałowy lustra dla tranzystorów bipolarnych(?) (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$):
+Model małosygnałowy lustra dla tranzystorów polowych (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$ EDIT: $I_ref$ oznacza jakąś wartość prądu, która będzie powielana na sąsiedniej stronie lustra. Robi się ją dając jakieś napięcie i opornik):
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{lustr_wyp1}
@@ -619,9 +619,9 @@ r_{out}&=\dfrac{U}{I}=g_{m4}r_{ds4}r_{ds2}+r_{ds4}+r_{ds2}
 Po prostu zastępujemy opornik źródłem prądowym.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.35\textwidth]{lustroZast}
+\includegraphics[width=0.5\textwidth]{lustroZast}
 \end{figure}
-Kółeczka, czyli prąd idzie do tranzystora (PMOS). Chyba. Rezystancja to $r_ds \approx 100k \Omega$, czyli dużo 
+Kółeczka, czyli prąd idzie do tranzystora (PMOS). Chyba. Rezystancja to $r_{ds} \approx 100k \Omega$, czyli dużo 
 
 \subsubsection{Rodzaje - source i sink}
 Sink to źródła na NMOSach - wciągają prąd, source to źródła na PMOSach - wynika, że wypuszczają prąd.
