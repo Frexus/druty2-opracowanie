@@ -861,13 +861,35 @@ Dla przykładu wymiarowanie powyższego układu:
 
 \subsection{Metody realizacji pamięci statycznej i dynamicznej}
 Pamięci dostępne dopóki włączone jest zasilanie.\\
+\\
 \textbf{Pamięć statyczna} \\
 Każdy bit zapamiętywany jest przez przerzutnik, każdy przerzutnik składa się z kilku bramek logicznych, każda bramka logiczna składa się z kliku tranzystorów. Przerzutnik zapamiętuje swój stan aż do jego ponownej zmiany (o ile dostarczane jest zasilanie).\\
 Zapamiętywanie stanu odbywa się przez dodatnie \textbf{sprzężenie zwrotne} tzn. część wyjść bramki wewnątrz przerzutnika musi wracać z powrotem do wejść. Dzięki temu jeśli nie ma zmian, stan jest utrzymywany.\\
-Pamięci statyczne są szybkie, ale składają się w sumie z co najmniej 6 tranzystorów, przez co są trudne i drogie do zrealizowania.
+Pamięci statyczne są szybkie, ale składają się w sumie z co najmniej 6 tranzystorów, przez co są trudne i drogie do zrealizowania. \\
 \\
 \textbf{Pamięć dynamiczna} \\
 Każdy bit zapamiętywany jest przez kondensator sterowany tranz. CMOS. Kondensator naładowany ładunkiem elektrycznym utrzymuje ten stan. Są to bardzo, bardzo mało kondensatorki. Ich stan musi być nieustannie \textbf{odświeżany}, bo szybko się rozładowuje (czas w ms).  Do odświeżania zawartości kondensatora stosuje się specjalne obwody. Jest wolniejsza, ale można osiągnąć dużo większe pojemności dzięki prostocie.
+
+\subsection{Przerzutniki i zatrzaski}
+Układy przenoszące wejście na wyjście w zależności od stanu zegara.\\
+\\
+\textbf{Przerzutniki} \\
+Przenoszą IN na OUT przy odpowiednim \textbf{zboczu zegara} (opadającym 1->0 albo narastającym 0->1) - tzn. przy jego zmianie\\
+\\
+\textbf{Zatrzaski} \\
+Przenoszą IN na OUT przy odpowiednim \textbf{poziomie zegara} \\
+\\
+Przykład zatrzasku statycznego ("Prawidłowa realizacja zatrzasku"):
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{przyklad_zatrzask_stat_1.png}
+\end{figure}
+
+Przykład przerzutnika dynamicznego (z 2 zatrzasków szeregowo, Master-Slave) :
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{przyklad_przerzutnik_dyn_1.png}
+\end{figure}
 
 
 
