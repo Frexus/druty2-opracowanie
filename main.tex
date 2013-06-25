@@ -16,7 +16,7 @@
 \subsection{Model małosygnałowy tranzystora bipolarnego}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{malosyg_bip}
+\includegraphics[width=0.7\textwidth]{malosyg_bip.png}
 \end{figure}
 
 W sumie chyba ważny wzór:
@@ -38,7 +38,7 @@ $V_{CE}$ & $> 200mV$ & $< 200mV$\\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{char}
+\includegraphics[width=0.5\textwidth]{char.png}
 \end{figure}
 
 Obrazek niezbyt fortunny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
@@ -62,7 +62,7 @@ Czemu tak jest, nie wiem. Wszystkie oznaczenia typu $I_C$, czy $V_{BE}$ należy 
 \subsection{Model małosygnałowy tranzystora polowego}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{malosyg_mos}
+\includegraphics[width=0.7\textwidth]{malosyg_mos.png}
 \caption{Charakterystyki wielkosygnałowe}
 \end{figure}
 
@@ -74,7 +74,7 @@ Czemu tak jest, nie wiem. Wszystkie oznaczenia typu $I_C$, czy $V_{BE}$ należy 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{charPol}
+\includegraphics[width=0.5\textwidth]{charPol.png}
 \end{figure}
 
 De facto wykresik taki sam jak dla bipolarnego.
@@ -116,7 +116,7 @@ Ta długość i szerokość to już kwestia budowy tranzystorów. Wzmocnienie go
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wzmoc_tranzystora}
+\includegraphics[width=0.5\textwidth]{wzmoc_tranzystora.png}
 \end{figure}
 
 Przykłada się $i_i$ i mierzy wzomcnienie prądowe ($\frac{i_o}{i_i}$)\\
@@ -153,7 +153,7 @@ Dla tranzystora bipolarnego wynik analogiczny:
 \end{equation}
 
 
-\section{Ukłądy jednotranzystorowe}
+\section{Układy jednotranzystorowe}
 Układy połączenia dla bipolarnych. Analogicznie robi się dla polowych - po prostu za tranzystor bipolarny wkładamy MOS-a. Schematy są dla npn/nMOS, dla pnp/pMOS robi się tak samo, tylko trzeba pilnować gdzie jest emiter.
 
 Wzmocnienia i w ogóle wszelkie charakterystyki liczymy zastępując tranzystor modelem małosygnałowym (innym dla bipolarnych, innym dla polowych). Z tego już można wyliczyć co trzeba, najwygodniej metodą oczkową. Trzeba uważać na źródła prądowe sterowane.
@@ -163,7 +163,7 @@ Ogólna zasada: na jednej nóżce jest sygnał wejściowy, na drugiej wyjściowy
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{CG}
+\includegraphics[width=0.5\textwidth]{CG.png}
 \end{figure}
 
 \begin{equation}
@@ -255,7 +255,7 @@ r_o = R_D || r_{ds}
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WB}
+\includegraphics[height=0.5\textwidth]{WB.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy \\
@@ -286,7 +286,7 @@ $k_i$ & $<1$ & $1$  \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{CS}
+\includegraphics[width=0.5\textwidth]{CS.png}
 \end{figure}
 
 $V_{gs} = -V_i$\\
@@ -323,7 +323,7 @@ Przy bipolarnym z racji połączenia baza-emiter $r_i = r_{be}$. W pozostałych 
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WE}
+\includegraphics[height=0.5\textwidth]{WE.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -354,7 +354,7 @@ $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{CD}
+\includegraphics[width=0.5\textwidth]{CD.png}
 \end{figure}
 
 \begin{equation}
@@ -414,7 +414,7 @@ Tutaj znowu jakieś cuda... Tzn. bardzo banalne rzeczy (ew. jak powiedział keid
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{CD2}
+\includegraphics[width=0.5\textwidth]{CD2.png}
 \end{figure}
 
 Wtedy otrzymujemy:
@@ -443,7 +443,7 @@ r_o = {V_o \over I_o} = {1 \over{1 \over R_S || r_ds} + g_m + g_{mb}} \approx {1
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WC}
+\includegraphics[height=0.5\textwidth]{WC.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -476,7 +476,7 @@ $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{DS}
+\includegraphics[width=0.5\textwidth]{DS.png}
 \end{figure}
 
 \begin{equation}
@@ -527,12 +527,12 @@ To w sumie niepotrzebne:
 r_i = {V_i \over I_i} = {V_i \over 0} = \infty
 \end{equation}
 
-$r_o$ nie było na wykłądzie, zlitował się.
+$r_o$ nie było na wykładzie, zlitował się.
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WDE}
+\includegraphics[height=0.5\textwidth]{WDE.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -560,7 +560,7 @@ Służą do:
 \subsection{Lustro prądowe}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{lustro}
+\includegraphics[width=0.5\textwidth]{lustro.png}
 \end{figure}
 \begin{align*}
 I_{REF}&=I_{C1}+2I_B=I_{C1}+\dfrac{2I_{C1}}{\beta}=I(1+\dfrac{2}{\beta}) \\
@@ -570,25 +570,25 @@ I_{REF}&=I_{C1}+2I_B=I_{C1}+\dfrac{2I_{C1}}{\beta}=I(1+\dfrac{2}{\beta}) \\
 Model małosygnałowy lustra dla tranzystorów polowych (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$ EDIT: $I_ref$ oznacza jakąś wartość prądu, która będzie powielana na sąsiedniej stronie lustra. Robi się ją dając jakieś napięcie i opornik):
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp1}
+\includegraphics[width=0.5\textwidth]{lustr_wyp1.png}
 \end{figure}
-
-Nie za bardzo wiadomo czemu obydwa źródła znikają ze schematu, ale wyjaśnienie rezystancji dodanej w miejsce źródła jest takie:
-
-\begin{equation}
-r_z = {U \over I} = {V_{gs} \over V_{gs}g_m} = {1 \over g_m}
-\end{equation}
 
 Źródeł prądowych $V_{bs}g_{mb}$ nie ma, bo źródło jest na masie, więc $V_{bs} = 0$.
 
-Ze względu na zwarcie przy pierwszym tranzystorze można zastąpić źródło sterowane:
+Ze względu na zwarcie przy pierwszym tranzystorze napięcie na gałęzi ze źródłem sterowanym wynosi $V_{gs1}$. Możemy więc policzyć rezystancję na tej gałęzi:
+\begin{equation}
+r_z = {U \over I} = {V_{gs1} \over V_{gs1}g_m} = {1 \over g_m}
+\end{equation}
+Czyli zastępujemy to źródło rezystancją:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp2}
+\includegraphics[width=0.5\textwidth]{lustr_wyp2.png}
 \end{figure}
+
+Nie wiadomo dlaczego drugie źródło jest równe 0 (prawdopodobnie te dwa źródła prądowe się w praktyce znoszą, a tylko jedno działa jak rezystancja, bo jest na nim napięcie), w każdym razie schemat wygląda teraz tak:
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{lustr_wyp3}
+\includegraphics[width=0.5\textwidth]{lustr_wyp3.png}
 \end{figure}
 
 Rezystancja wyjściowa: 
@@ -599,13 +599,13 @@ r_o = \dfrac{V}{I} = r_{ce2}
 \subsection{Kaskodowe źródło prądowe}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{kaskoda}
+\includegraphics[width=0.5\textwidth]{kaskoda.png}
 \end{figure}
 
 Model małosygnałowy kaskody dla polowych (gałąź z $1/g_{m}$ robi się analogicznie jak w lustrze):
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{kaskoda_wypr}
+\includegraphics[width=0.5\textwidth]{kaskoda_wypr.png}
 \end{figure}
 \begin{align*}
 U&=(I_o-g_{m4}V_{gs4})r_{ds4}+I_o r_{ds2} \\
@@ -630,8 +630,8 @@ Sink to źródła na NMOSach - wciągają prąd, source to źródła na PMOSach 
 \subsection{Klasa A}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_a}
-\includegraphics[scale=0.5]{wzm_moc_a_wyk}
+\includegraphics[width=0.5\textwidth]{wzm_moc_a.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_a_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Najprostszy wzmacniacz mocy}
@@ -660,8 +660,8 @@ max(V_o)\rightarrow V_{cc}, max(\dfrac{V_O}{R_L})\rightarrow I_B \quad \rightarr
 \subsection{Klasa B}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_b}
-\includegraphics[scale=0.5]{wzm_moc_b_wyk}
+\includegraphics[width=0.5\textwidth]{wzm_moc_b.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_b_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Nie pobiera mocy w stanie statycznym}
@@ -670,7 +670,7 @@ max(V_o)\rightarrow V_{cc}, max(\dfrac{V_O}{R_L})\rightarrow I_B \quad \rightarr
 \end{itemize}
 
 Sprawność:
-$P_L$ jak poprzednio.
+$P_L$ jak poprzednio. $P_{total}$ liczymy tylko od $0$ do $\pi$, bo w drugiej połowie okresu moc jest taka sama.
 \begin{align*}
 P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L} d\phi = \dfrac{2 V_{cc} V_o}{\pi R_L}\\
 \eta &= \dfrac{\dfrac{V_o^2}{2 R_L}}{\dfrac{2 V_{cc} V_o}{\pi R_L}} = \dfrac{\pi V_o}{4 V_{cc}}\\
@@ -682,8 +682,8 @@ P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L}
 \subsection{Klasa AB}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_ab}
-\includegraphics[scale=0.5]{wzm_moc_ab_wyk}
+\includegraphics[width=0.5\textwidth]{wzm_moc_ab.png}
+\includegraphics[width=0.5\textwidth]{wzm_moc_ab_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Energia tracona na tranzystorach}
@@ -694,7 +694,7 @@ P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L}
 \subsection{Klasa D}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{wzm_moc_d}
+\includegraphics[width=0.5\textwidth]{wzm_moc_d.png}
 \end{figure}
 \begin{itemize}
 \item{Tranzystory działają jak klucz}
@@ -711,7 +711,7 @@ Właściwości:
 \end{itemize}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy}
+\includegraphics[width=0.5\textwidth]{roznicowy.png}
 \end{figure}
 
 \subsection{Analiza małosygnałowa}
@@ -738,7 +738,7 @@ v_{o2}&=v_{oc}-\dfrac{v_{od}}{2}
 Wprowadzamy powyższe zależności do schematu.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_nowe_oznaczenia}
+\includegraphics[width=0.5\textwidth]{roznicowy_nowe_oznaczenia.png}
 \end{figure}
 
 \subsubsection{Wzmocnienie różnicowe}
@@ -746,14 +746,14 @@ Wprowadzamy powyższe zależności do schematu.
 Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_roznica}
+\includegraphics[width=0.5\textwidth]{roznicowy_roznica.png}
 \end{figure}
 
 Mamy tylko sygnał różnicowy. Potencjał przy gałęzi ze wspólnymi źródłami się nie zmieni przy zmianach napięcia $V_{id}$, więc zwieramy go do masy. Układ jest symetryczny, więc analizujemy tylko połówkę:
 \begin{figure}[H]
 \centering
 
-\includegraphics[scale=1]{roznicowy_roznica_malosyg}
+\includegraphics[width=0.5\textwidth]{roznicowy_roznica_malosyg.png}
 \end{figure}
 
 Po \textbf{prostych} obliczeniach:
@@ -769,13 +769,13 @@ $A_{dm}$ to \textbf{wzmocnienie różnicowe} (wzmocnienie układu dla symetryczn
 Chcemy tylko sygnał współbieżny, więc tym razem zwieramy do masy oba źródła $V_{id}$. Prąd $I_{B}$ nie płynie, ponieważ mamy dwie identyczne połówki zasilane tym samym napięciem - rozwieramy. $V_{o1}$ i $V_{o2}$ są takie same. 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_wsp}
+\includegraphics[width=0.5\textwidth]{roznicowy_wsp.png}
 \end{figure}
 
 Opór $R_{Z}$ musimy podzielić tak, żeby układ był symetryczny. Zastępujemy go więc równoległym połączeniem oporów $2R_{Z}$. Mamy układ symetryczny, analizujemy tylko jedną połówkę.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=1]{roznicowy_wsp_malosyg}
+\includegraphics[width=0.5\textwidth]{roznicowy_wsp_malosyg.png}
 \end{figure}
 
 \begin{align*}
@@ -793,4 +793,59 @@ Lepiej określa charakterystykę wzmacniacza:
 \begin{equation}
 CMMR=\dfrac{A_{dm}}{A_{cm}}
 \end{equation}
+
+\section{Bramki CMOS}
+\subsection{Inwerter}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{NOT.png}
+\end{figure}
+
+\subsection{NAND}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.5\textwidth]{NAND.png}
+\end{figure}
+
+\subsection{NOR}
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.5\textwidth]{NOR.png}
+\end{figure}
+
+\section{Realizacja funkcji i wymiarowanie w CMOS}
+Suma (alternatywa):
+\includegraphics[width=0.5\textwidth]{suma.png}
+
+Iloczyn (koniunkcja):
+\includegraphics[width=0.5\textwidth]{iloczyn.png}
+
+Analogicznie na pMOS-ach, z tym, że elementy są negowane.
+\subsection{Jak robimy funkcję}
+Najpierw musimy zbudować układ na nMOS-ach, następnie dokładnie odwrotny schemat na pMOS-ach. Najlepiej to zrozumieć na przykładzie:
+Mamy funkcję np $F=A\overline{B}+C(B+D)$. Po kolei robimy poszczególne elementy korzystając z sumy i iloczynu powyżej. Budujemy układ na nMOS-ach, więc \textbf{nie możemy} dać pMOS-a jako $\overline{B}$, bo mogą się pojawić na wyjściu jakieś cząstkowe napięcia, które będą dawać fałszywą wartość logiczną. Dajemy więc nMOS-a i do niego podpinamy inwerter. 
+
+Mamy układ na nMOS-ach, teraz musimy zrobić na pMOS-ach. Na pMOS-ach realizujemy funkcję odwrotną do zadanej - zamieniamy sumę na iloczyn, iloczyn na sumę, negujemy każdą składową, czyli $F=(\overline{A}+B)(\overline{C}+\overline{B}\overline{D})$. Negację załatwia nam tranzystor pMOS. Dla $B$ (niezanegowane), tak samo jak poprzednio, musimy wstawić inwerter. Po tym wszystkim łączymy oba układy tak, że nMOS jest na dole, pMOS na górze, w miejscu połączenia mamy funkcję $\overline{F}$ (\textbf{zanegowane!}). Do wyjścia podpinamy inwerter i mamy $F$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.5\textwidth]{F.png}
+\end{figure}
+
+\section{Wymiarowanie}
+Połączenie szeregowe - mnożymy x2, równoległe - przechodzi bez zmian:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{wymiar_szer.png}
+\includegraphics[width=0.5\textwidth]{wymiar_rown.png}
+\end{figure}
+
+Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfrac{2W}{L}$, ponieważ chcemy, żeby narastanie i opadanie było tak samo szybkie (na pMOS-ie musi być szerszy kanał).
+
+Dla przykładu wymiarowanie powyższego układu:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{F_wymiar.png}
+\end{figure}
+
 \end{document}
