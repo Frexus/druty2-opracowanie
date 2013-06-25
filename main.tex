@@ -32,7 +32,7 @@ Włąściwa polaryzacja tranzystora bipolarnego:
 \hline
 $V_{BE}$ & $\geq 0.7V$ & $\leq -0.7V$ \\ 
 
-$V_{CE}$ & $> 200mV$ & $< 200mV$\\ 
+$V_{CE}$ & $> 200mV$ & $< -200mV$\\ 
 \end{tabular}
 \end{center}
 
@@ -77,13 +77,13 @@ Czemu tak jest, nie wiem. Wszystkie oznaczenia typu $I_C$, czy $V_{BE}$ należy 
 \includegraphics[width=0.5\textwidth]{charPol.png}
 \end{figure}
 
-De facto wykresik taki sam jak dla bipolarnego.
+Wykresik podobny do bipolarnego.
 \begin{itemize}
 \item obszar nienasycenia - triodowy
 \item obszar nasycenia - aktywny normalny
 \end{itemize}
 
-Tutaj nie ma konkretnego napięcia $V_{gs}$ jak w bipolarnych ($V_{be} = 0.7V$)
+Tutaj nie ma konkretnego napięcia $V_{TH}$ jak w bipolarnych ($V_{be} = 0.7V$). 
 
 \begin{center}
 \begin{tabular}{c|c|c}
@@ -110,16 +110,17 @@ Ta długość i szerokość to już kwestia budowy tranzystorów. Wzmocnienie go
 \item w modelu małosygnałowym pojemności są po to, zeby pokazać, ze tranzystor nie działą natychmiastowo
 \item duży obwód to emiter-kolektor lub źródło-dren
 \item mały obwód (sterujący) to baza-emiter lub -bramka-źródło
+\item $g_m$ w bipolarnym zmieni się liniowo, a w polowym jest pod pierwiastkiem, więc ogólnie polowe gorzej wzmacniają
 \end{itemize}
 
-\subsection{Wzmocnienie prądowe tranzystora polowego}
+\subsection{Wzmocnienie prądowe tranzystora polowego - charakterystyka częstotliwościowa}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wzmoc_tranzystora.png}
+\includegraphics[width=0.7\textwidth]{wzmoc_tranzystora.png}
 \end{figure}
 
-Przykłada się $i_i$ i mierzy wzomcnienie prądowe ($\frac{i_o}{i_i}$)\\
+Przykłada się $i_i$ i mierzy wzmocnienie prądowe ($\frac{i_o}{i_i}$)\\
 \\
 R wyjściowe jak najmniejsze, więc jest na końcu zwarcie
 \begin{equation}
@@ -255,8 +256,7 @@ r_o = R_D || r_{ds}
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.35\textwidth]{WB.png}
-\end{figure}
+\includegraphics[height=0.3\textwidth]{WB.png}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy \\
 \hline
@@ -269,7 +269,9 @@ $k_u$ & $g_m (r_{ce}\parallel R_C)$ & $(g_m + g_{mb})(r_{ds}\parallel R_D)$  \\
 $k_i$ & $<1$ & $1$  \\ 
 
 \end{tabular} 
-\\
+\end{figure}
+
+
 \textbf{Cechy} (z grubsza dla obu modeli takie same):
 \begin{enumerate}
 	\item \textbf{$K_u$} duże - dobrze!
@@ -323,9 +325,7 @@ Przy bipolarnym z racji połączenia baza-emiter $r_i = r_{be}$. W pozostałych 
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.35\textwidth]{WE.png}
-\caption{Rysunek wspólnego emitera, ale wystarczy podmienić na MOSa i też będzie}
-\end{figure}
+\includegraphics[height=0.3\textwidth]{WE.png}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
 \hline
@@ -338,7 +338,10 @@ $k_u$ & $-g_m (r_{ce}\parallel R_C)$ & $-g_m(r_{ds}\parallel R_D)$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
-\\
+\caption{Rysunek wspólnego emitera, ale wystarczy podmienić na MOSa i też będzie}
+\end{figure}
+
+
 \textbf{Cechy} (z grubsza dla obu modeli takie same):
 \begin{enumerate}
 	\item \textbf{$K_u$} duże - dobrze!
@@ -426,7 +429,7 @@ V_gs = - V_o
 V_bs = - V_o
 \end{equation}
 
-Ukłąd jak go sobie łądnie narysujemy, to równoległe połączenie 2 oporników i 3 źródeł prądowych. więc jak połączymy źródła i oporniki otrzymujemy:
+Układ jak go sobie ładnie narysujemy, to równoległe połączenie 2 oporników i 3 źródeł prądowych. więc jak połączymy źródła i oporniki otrzymujemy:
 
 \begin{equation}
 V_o = {I_z R_z} = (I + g_mV_{gs} + g_{mb}V_{bs})(R_S || r_ds) = (I - g_mV_o - g_{mb}V_o)(R_S || r_ds) = (I - V_o(g_m + g_{mb}))(R_S || r_ds)
@@ -444,8 +447,7 @@ r_o = {V_o \over I_o} = {1 \over{1 \over R_S || r_ds} + g_m + g_{mb}} \approx {1
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.35\textwidth]{WC.png}
-\end{figure}
+\includegraphics[height=0.3\textwidth]{WC.png}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
 \hline
@@ -458,7 +460,9 @@ $k_u$ & $\dfrac{g_m}{g_m+\dfrac{1}{R_E}}$ & $\dfrac{g_m}{g_m+g_{mb}}$ \\
 $k_i$ & $g_m r_{be} = \beta$ & $\infty$ \\ 
 
 \end{tabular} 
-\\
+\end{figure}
+
+
 \textbf{Cechy} (z grubsza dla obu modeli takie same):
 \begin{enumerate}
 	\item \textbf{$K_u$} małe - źle :(
@@ -533,8 +537,7 @@ $r_o$ nie było na wykładzie, zlitował się.
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.35\textwidth]{WDE.png}
-\end{figure}
+\includegraphics[height=0.3\textwidth]{WDE.png}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
 \hline
@@ -547,6 +550,8 @@ $k_u$ & $-\dfrac{R_C}{R_E}$ & $-\dfrac{R_D}{R_S}$ \\
 $k_i$ & $?$ & $\infty$ \\ 
 
 \end{tabular} 
+\end{figure}
+
 
 \section{Źródła prądowe}
 Służą do:
