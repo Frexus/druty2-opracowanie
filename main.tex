@@ -6,7 +6,7 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{float}
 \usepackage{amsmath}
-\author{Adam Syrek i Poncjusz Piłat \\ (wspomagani notatkami Sylwii i innych zacnych osób)}
+\author{Adam Syrek, Poncjusz Piłat i Michał Drobniak \\ (wspomagani notatkami Sylwii i innych zacnych osób)}
 \title{Opracowanie pytań na egzamin z Układów Elektronicznych}
 \renewcommand\arraystretch{2}
 \begin{document}
@@ -235,7 +235,7 @@ Podobno $I_i = I_o$, więc:
 r_i = {V_i(r_{ds} + R_D) \over V_i(1+r_{ds}(g_m + g_{mb}))} \approx {r_{ds} + R_D \over r_{ds}(g_m + g_{mb})}
 \end{equation}
 
-Skróciłem $V_i$ i zrobiłęm taki sam myk z jedynką co przy $k_u$. Dodatkowo jeśli zachodzi $R_D << r_{ds}$, to:
+Skróciłem $V_i$ i zrobiłem taki sam myk z jedynką co przy $k_u$. Dodatkowo jeśli zachodzi $R_D << r_{ds}$, to:
 
 \begin{equation}
 r_i \approx  {1 \over (g_m + g_{mb})}
@@ -255,7 +255,7 @@ r_o = R_D || r_{ds}
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WB.png}
+\includegraphics[height=0.35\textwidth]{WB.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy \\
@@ -311,7 +311,7 @@ Dalej:
 r_i = {V_i \over I_i} = {V_i \over 0} = \infty
 \end{equation}
 
-Wyjaśnmienie: brak przepływu prądu pomiędzy bramką, a źródłem dlatego to 0.
+Wyjaśnienie: brak przepływu prądu pomiędzy bramką, a źródłem dlatego to 0.
 
 \begin{equation}
 r_o = R_D || r_{ds}
@@ -323,7 +323,8 @@ Przy bipolarnym z racji połączenia baza-emiter $r_i = r_{be}$. W pozostałych 
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WE.png}
+\includegraphics[height=0.35\textwidth]{WE.png}
+\caption{Rysunek wspólnego emitera, ale wystarczy podmienić na MOSa i też będzie}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -443,7 +444,7 @@ r_o = {V_o \over I_o} = {1 \over{1 \over R_S || r_ds} + g_m + g_{mb}} \approx {1
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WC.png}
+\includegraphics[height=0.35\textwidth]{WC.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -532,7 +533,7 @@ $r_o$ nie było na wykładzie, zlitował się.
 
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{WDE.png}
+\includegraphics[height=0.35\textwidth]{WDE.png}
 \end{figure}
 \begin{tabular}{c|c|c}
 & bipolarny & polowy\\
@@ -560,14 +561,14 @@ Służą do:
 \subsection{Lustro prądowe}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{lustro.png}
+\includegraphics[width=0.35\textwidth]{lustro.png}
 \end{figure}
 \begin{align*}
 I_{REF}&=I_{C1}+2I_B=I_{C1}+\dfrac{2I_{C1}}{\beta}=I(1+\dfrac{2}{\beta}) \\
 \dfrac{I}{I_{REF}}&=\dfrac{1}{1+\dfrac{2}{\beta}}
 \end{align*}
 
-Model małosygnałowy lustra dla tranzystorów polowych (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$ EDIT: $I_ref$ oznacza jakąś wartość prądu, która będzie powielana na sąsiedniej stronie lustra. Robi się ją dając jakieś napięcie i opornik):
+Model małosygnałowy lustra dla tranzystorów polowych (uwaga: nie powinno być na schemacie źródła prądowego $I_{REF}$ EDIT: $I_{REF}$ oznacza jakąś wartość prądu, która będzie powielana na sąsiedniej stronie lustra. Robi się ją dając jakieś napięcie i opornik):
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{lustr_wyp1.png}
@@ -582,24 +583,24 @@ r_z = {U \over I} = {V_{gs1} \over V_{gs1}g_m} = {1 \over g_m}
 Czyli zastępujemy to źródło rezystancją:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{lustr_wyp2.png}
+\includegraphics[width=0.35\textwidth]{lustr_wyp2.png}
 \end{figure}
 
 Nie wiadomo dlaczego drugie źródło jest równe 0 (prawdopodobnie te dwa źródła prądowe się w praktyce znoszą, a tylko jedno działa jak rezystancja, bo jest na nim napięcie), w każdym razie schemat wygląda teraz tak:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{lustr_wyp3.png}
+\includegraphics[width=0.45\textwidth]{lustr_wyp3.png}
 \end{figure}
 
 Rezystancja wyjściowa: 
 \begin{equation}
-r_o = \dfrac{V}{I} = r_{ce2}
+r_o = \dfrac{V}{I} = r_{ds2}
 \end{equation}
 
 \subsection{Kaskodowe źródło prądowe}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{kaskoda.png}
+\includegraphics[width=0.3\textwidth]{kaskoda.png}
 \end{figure}
 
 Model małosygnałowy kaskody dla polowych (gałąź z $1/g_{m}$ robi się analogicznie jak w lustrze):
@@ -630,8 +631,8 @@ Sink to źródła na NMOSach - wciągają prąd, source to źródła na PMOSach 
 \subsection{Klasa A}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wzm_moc_a.png}
-\includegraphics[width=0.5\textwidth]{wzm_moc_a_wyk.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_a.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_a_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Najprostszy wzmacniacz mocy}
@@ -660,8 +661,8 @@ max(V_o)\rightarrow V_{cc}, max(\dfrac{V_O}{R_L})\rightarrow I_B \quad \rightarr
 \subsection{Klasa B}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wzm_moc_b.png}
-\includegraphics[width=0.5\textwidth]{wzm_moc_b_wyk.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_b.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_b_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Nie pobiera mocy w stanie statycznym}
@@ -682,8 +683,8 @@ P_{total} &= \dfrac{1}{\pi} \int \limits^\pi_0 V_{cc} \dfrac{V_o \sin \phi}{R_L}
 \subsection{Klasa AB}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wzm_moc_ab.png}
-\includegraphics[width=0.5\textwidth]{wzm_moc_ab_wyk.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_ab.png}
+\includegraphics[width=0.3\textwidth]{wzm_moc_ab_wyk.png}
 \end{figure}
 \begin{itemize}
 \item{Energia tracona na tranzystorach}
@@ -711,7 +712,7 @@ Właściwości:
 \end{itemize}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{roznicowy.png}
+\includegraphics[width=0.4\textwidth]{roznicowy.png}
 \end{figure}
 
 \subsection{Analiza małosygnałowa}
@@ -738,7 +739,7 @@ v_{o2}&=v_{oc}-\dfrac{v_{od}}{2}
 Wprowadzamy powyższe zależności do schematu.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{roznicowy_nowe_oznaczenia.png}
+\includegraphics[width=0.35\textwidth]{roznicowy_nowe_oznaczenia.png}
 \end{figure}
 
 \subsubsection{Wzmocnienie różnicowe}
@@ -769,7 +770,7 @@ $A_{dm}$ to \textbf{wzmocnienie różnicowe} (wzmocnienie układu dla symetryczn
 Chcemy tylko sygnał współbieżny, więc tym razem zwieramy do masy oba źródła $V_{id}$. Prąd $I_{B}$ nie płynie, ponieważ mamy dwie identyczne połówki zasilane tym samym napięciem - rozwieramy. $V_{o1}$ i $V_{o2}$ są takie same. 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{roznicowy_wsp.png}
+\includegraphics[width=0.35\textwidth]{roznicowy_wsp.png}
 \end{figure}
 
 Opór $R_{Z}$ musimy podzielić tak, żeby układ był symetryczny. Zastępujemy go więc równoległym połączeniem oporów $2R_{Z}$. Mamy układ symetryczny, analizujemy tylko jedną połówkę.
@@ -798,27 +799,27 @@ CMMR=\dfrac{A_{dm}}{A_{cm}}
 \subsection{Inwerter}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{NOT.png}
+\includegraphics[width=0.35\textwidth]{NOT.png}
 \end{figure}
 
 \subsection{NAND}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{NAND.png}
+\includegraphics[height=0.35\textwidth]{NAND.png}
 \end{figure}
 
 \subsection{NOR}
 \begin{figure}[H]
 \centering
-\includegraphics[height=0.5\textwidth]{NOR.png}
+\includegraphics[height=0.35\textwidth]{NOR.png}
 \end{figure}
 
 \section{Realizacja funkcji i wymiarowanie w CMOS}
 Suma (alternatywa):
-\includegraphics[width=0.5\textwidth]{suma.png}
+\includegraphics[width=0.25\textwidth]{suma.png}
 
 Iloczyn (koniunkcja):
-\includegraphics[width=0.5\textwidth]{iloczyn.png}
+\includegraphics[width=0.25\textwidth]{iloczyn.png}
 
 Analogicznie na pMOS-ach, z tym, że elementy są negowane.
 \subsection{Jak robimy funkcję}
@@ -836,8 +837,8 @@ Mamy układ na nMOS-ach, teraz musimy zrobić na pMOS-ach. Na pMOS-ach realizuje
 Połączenie szeregowe - mnożymy x2, równoległe - przechodzi bez zmian:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{wymiar_szer.png}
-\includegraphics[width=0.5\textwidth]{wymiar_rown.png}
+\includegraphics[width=0.35\textwidth]{wymiar_szer.png}\\
+\includegraphics[width=0.35\textwidth]{wymiar_rown.png}
 \end{figure}
 
 Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfrac{2W}{L}$, ponieważ chcemy, żeby narastanie i opadanie było tak samo szybkie (na pMOS-ie musi być szerszy kanał).
