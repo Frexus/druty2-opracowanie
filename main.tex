@@ -44,7 +44,7 @@ $V_{CE}$ & $> 200mV$ & $< -200mV$\\
 \includegraphics[width=0.5\textwidth]{char.png}
 \end{figure}
 
-Obrazek niezbyt fortunny, ale taki znalazłem. Na lewym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
+Obrazek niezbyt fortunny, ale taki znalazłem. Na prawym wykresie tam gdzie prąd idzie tak ostro w górę jest obszar triodowy, potem ($V_{CE} > 200mV$) jest obszar aktywny normalny. To, że ta charakterystyka rośnie w obszarze normalnym jest spowodowane tym napięciem Early'ego we wzorze (tak zrozumiałem). W pierszym przybliżeniu to olaliśmy i w obszarze aktywnym charakterystyka była stała.\\
 
 
 $g_m$ - transkonduktancja
@@ -101,13 +101,11 @@ $V_{DS}$ & $> V_{GS} - V_{TH}$ & $> V_{GS} - V_{TH}$\\
 \end{tabular}
 \end{center}
 
-$V_{TH}$ to jest namięcie od którego tranzystor polowy zaczyna normalnie działać. Skoro nie ma podanej konkretnej wartości, to pewnie różne tranzystory mają różnie.\\
-Nie przepisze wyprowadzenie $g_m$, bo i tak nikt tego nei zapamięta. W każdym razie:
-\begin{itemize}
-\item wynik jest po pierwiastkiem
-\item jest wprost proporcjonalne do szerokości kanału
-\item jest przeciwnie proporcjonalne do długości kanału
-\end{itemize}
+$V_{TH}$ to jest napięcie od którego tranzystor polowy zaczyna normalnie działać. Skoro nie ma podanej konkretnej wartości, to pewnie różne tranzystory mają różnie.\\
+Nie przepisze wyprowadzenie $g_m$, bo i tak nikt tego nie zapamięta. W każdym razie:
+\begin{equation}
+g_m = \sqrt{2\mu C_{ox}{W \over L}I_D}
+\end{equation}
 Ta długość i szerokość to już kwestia budowy tranzystorów. Wzmocnienie gorsze niż w bipolarnych, ale jak się bardzo skróci długość(l), to wzmocnienie sie poprawia, a teraz wszystko się skraca, więc polowe są popularne.
 
 \subsection{Luźne uwagi}
@@ -115,8 +113,8 @@ Ta długość i szerokość to już kwestia budowy tranzystorów. Wzmocnienie go
 \item model wielkosygnałowy jest potrzebny do znalezienia punktu pracy tranzystora(obszaru aktywnego normalnego)
 \item w modelu małosygnałowym pojemności są po to, zeby pokazać, ze tranzystor nie działą natychmiastowo
 \item duży obwód to emiter-kolektor lub źródło-dren
-\item mały obwód (sterujący) to baza-emiter lub -bramka-źródło
-\item $g_m$ w bipolarnym zmieni się liniowo, a w polowym jest pod pierwiastkiem, więc ogólnie polowe gorzej wzmacniają
+\item mały obwód (sterujący) to baza-emiter lub bramka-źródło
+\item $g_m$ w bipolarnym zmieni się liniowo, a w polowym jest pod pierwiastkiem, więc ogólnie polowe gorzej wzmacniają (czy jakoś tak)
 \end{itemize}
 
 \subsection{Wzmocnienie prądowe tranzystora polowego - charakterystyka częstotliwościowa}
@@ -299,8 +297,13 @@ $k_i$ & $<1$ & $1$  \\
 \includegraphics[width=0.5\textwidth]{CS.png}
 \end{figure}
 
-$V_{gs} = -V_i$\\
-$V_{bs} = 0$ - te same potencjały - odpada jedno źródło prądu\\
+\begin{equation}
+V_{gs} = -V_i
+\end{equation}
+\begin{equation}
+V_{bs} = 0
+\end{equation}
+$V_B = V_S =$ masaej, to je - te same potencjały - odpada jedno źródło prądu.
 
 \begin{equation}
 k_u = {V_o \over V_i}
@@ -381,10 +384,10 @@ V_o = {(g_mV_{gs} + g_{mb}V_{bs})(R_S || r_{ds})}
 
 (Powyższe można też obliczyć metodą węzłową.
 \begin{equation}
-V_gs = V_i - V_o
+V_{gs} = V_i - V_o
 \end{equation}
 \begin{equation}
-V_bs = - V_o
+V_{bs} = - V_o
 \end{equation}
 
 \begin{equation}
@@ -396,7 +399,7 @@ V_o = {(g_mV_i - g_mV_o - g_{mb}V_{o})(R_S || r_{ds})}
 \end{equation}
 
 \begin{equation}
-{V_o ({1\over R_S || r_{ds}} + g_m + g_{mb})= g_mV_i }
+{V_o \left({1\over R_S || r_{ds}} + g_m + g_{mb}\right)= g_mV_i }
 \end{equation}
 
 Teraz trzeba do wspólnego mianownika nawias z lewej strony i wywalić go na prawą. Pozwolę sobie opuścić to. 
@@ -407,7 +410,7 @@ V_o = {V_ig_m(R_S || r_{ds}) \over (g_m + g_{mb})r_{ds}||R_s + 1}
 To jest inaczej niż w notatkach Sylwii, ale śmiem twierdzić, ze mam racje, bo zgadza się to z tym, co potem pisze o $k_u$:P
 
 \begin{equation}
-k_u = {V_o \over V_i} = {g_m(R_S || r_{ds}) \over (g_m + g_{mb})r_{ds}||R_s + 1} \approx = {g_m(R_S || r_{ds}) \over (g_m + g_{mb})(r_{ds}||R_s)} \leq 1
+k_u = {V_o \over V_i} = {g_m(R_S || r_{ds}) \over (g_m + g_{mb})r_{ds}||R_s + 1} \approx {g_m(R_S || r_{ds}) \over (g_m + g_{mb})(r_{ds}||R_s)} \leq 1
 \end{equation}
 
 Znowu w jakiś magiczny sposób znika nam jedynka (bo jest dużo mniejsza od tego iloczynu koło niej), i tak koniec końców dowiadujemy się, że to jest nie większe od 1 (co wynika ze wzoru w sumie).
@@ -422,7 +425,7 @@ Wytłumaczenie tak jak wyżej.
 r_o = {V_o \over I_o}
 \end{equation}
 
-Tutaj znowu jakieś cuda... Tzn. bardzo banalne rzeczy (ew. jak powiedział keidyś prof. Idzik 'to jest proste, ale nie banalne'). Zwieramy $V_i$ (jak zawsze przy liczeniu $r_o$) i dodajemy źródło prądu $I$ między masą, a potencjałem $V_o$.
+Tutaj znowu jakieś cuda... Tzn. bardzo proste rzeczy (ew. jak powiedział kiedyś prof. Idzik 'to jest proste, ale nie banalne'). Zwieramy $V_i$ (jak zawsze przy liczeniu $r_o$) i dodajemy źródło prądu $I$ między masą, a potencjałem $V_o$.
 
 \begin{figure}[H]
 \centering
