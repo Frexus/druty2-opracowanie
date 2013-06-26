@@ -163,6 +163,8 @@ Układy połączenia dla bipolarnych. Analogicznie robi się dla polowych - po p
 Wzmocnienia i w ogóle wszelkie charakterystyki liczymy zastępując tranzystor modelem małosygnałowym (innym dla bipolarnych, innym dla polowych). Z tego już można wyliczyć co trzeba, najwygodniej metodą oczkową. Trzeba uważać na źródła prądowe sterowane.
 
 Ogólna zasada: na jednej nóżce jest sygnał wejściowy, na drugiej wyjściowy, a na trzeciej nóżce nie ma nic i właśnie ta trzecia nóżka jest "wspólna".
+
+Licząc napięcie wyjściowe zawsze liczymy spadek napięcia na 'dużym' oporze ($R_D,R_S$). W zdegenerowanym źródle na $R_D$, bo opór $R_S$ właśnie degeneruje źródło.
 \subsection{wspólna bramka (analogicznie wspólna baza)}
 
 \begin{figure}[H]
@@ -752,7 +754,8 @@ Wprowadzamy powyższe zależności do schematu.
 
 \subsubsection{Wzmocnienie różnicowe}
 
-Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi.
+Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi. Kiedy nie ma sygnału wspólnego $V_{ic}$ to potencjał w punkcie pomiędzy źródłami się nie zmieni, więc możemy olać źródło prądowe i zewrzeć to do masy (źródło prądowe jest po to, żeby stabilizowało prace obu tranzystorów, a skoro i tak będzie stabilna, to...).
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{roznicowy_roznica.png}
@@ -761,15 +764,18 @@ Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko
 Mamy tylko sygnał różnicowy. Potencjał przy gałęzi ze wspólnymi źródłami się nie zmieni przy zmianach napięcia $V_{id}$, więc zwieramy go do masy. Układ jest symetryczny, więc analizujemy tylko połówkę:
 \begin{figure}[H]
 \centering
-
 \includegraphics[width=0.5\textwidth]{roznicowy_roznica_malosyg.png}
 \end{figure}
 
+Powyższy układ to nic innego jak wspólne źródło.
+
 Po \textbf{prostych} obliczeniach:
-\begin{align*}
-\dfrac{V_{od}}{2}&=-g_{m}\dfrac{V_{id}}{2}r_{ds}\parallel R_{L} \\
+\begin{equation}
+\dfrac{V_{od}}{2} =-g_{m}\dfrac{V_{id}}{2}r_{ds}\parallel R_{L} \\
+\end{equation}
+\begin{equation}
 A_{dm}=\dfrac{V_{od}}{V_{id}}=-g_{m} r_{ds} \parallel R_{L}
-\end{align*}
+\end{equation}
 
 $A_{dm}$ to \textbf{wzmocnienie różnicowe} (wzmocnienie układu dla symetrycznego sygnału różnicowego).
 
@@ -804,6 +810,24 @@ CMMR=\dfrac{A_{dm}}{A_{cm}}
 \end{equation}
 
 \section{Bramki CMOS}
+\subsection{Wstęp}
+Cechy:
+\begin{itemize}
+\item niski pobór mocy - moc statyczna = 0 (statyczna - gdy nie ma zmian zegara)
+\item skalowalność  - tzn że malutkie mogą być
+\item w ciul tanie
+\item $r_{in} \rightarrow \inftyą w m$ 
+\end{itemize}
+
+Algebra Bool'a:
+\begin{itemize}
+\item $\cdot$ - AND
+\item  $+$ - OR
+\item $-$ - NOT
+\end{itemize}
+
+
+
 \subsection{Inwerter}
 \begin{figure}[H]
 \centering
@@ -827,7 +851,7 @@ Suma (alternatywa):
 \includegraphics[width=0.25\textwidth]{suma.png}
 
 Iloczyn (koniunkcja):
-\includegraphics[width=0.25\textwidth]{iloczyn.png}
+\includegraphics[width=0.2\textwidth]{iloczyn.png}
 
 Analogicznie na pMOS-ach, z tym, że elementy są negowane.
 \subsection{Jak robimy funkcję}
@@ -845,8 +869,8 @@ Mamy układ na nMOS-ach, teraz musimy zrobić na pMOS-ach. Na pMOS-ach realizuje
 Połączenie szeregowe - mnożymy x2, równoległe - przechodzi bez zmian:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.35\textwidth]{wymiar_szer.png}\\
-\includegraphics[width=0.35\textwidth]{wymiar_rown.png}
+\includegraphics[width=0.2\textwidth]{wymiar_szer.png}\\
+\includegraphics[width=0.2\textwidth]{wymiar_rown.png}
 \end{figure}
 
 Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfrac{2W}{L}$, ponieważ chcemy, żeby narastanie i opadanie było tak samo szybkie (na pMOS-ie musi być szerszy kanał).
