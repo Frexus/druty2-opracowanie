@@ -77,7 +77,10 @@ Czemu tak jest, nie wiem. Wszystkie oznaczenia typu $I_C$, czy $V_{BE}$ należy 
 \item D - dren
 \item G - bramka (Gate)
 \item S - źródło (Source) (to ze strzałką na schemacie)
+\item B - podłoże (Body) (zawsze na masie)
 \end{itemize}
+
+Właśnie przez ten czwarty element (B) w modelu małosygnałowym mamy dwa źródła sterowane, a nie jedno. Potencjał na podłożu jest zawsze równy potencjałowi masy.
 
 \begin{figure}[H]
 \centering
@@ -167,6 +170,8 @@ Układy połączenia dla bipolarnych. Analogicznie robi się dla polowych - po p
 Wzmocnienia i w ogóle wszelkie charakterystyki liczymy zastępując tranzystor modelem małosygnałowym (innym dla bipolarnych, innym dla polowych). Z tego już można wyliczyć co trzeba, najwygodniej metodą oczkową. Trzeba uważać na źródła prądowe sterowane.
 
 Ogólna zasada: na jednej nóżce jest sygnał wejściowy, na drugiej wyjściowy, a na trzeciej nóżce nie ma nic i właśnie ta trzecia nóżka jest "wspólna".
+
+Licząc napięcie wyjściowe zawsze liczymy spadek napięcia na 'dużym' oporze ($R_D,R_S$). W zdegenerowanym źródle na $R_D$, bo opór $R_S$ właśnie degeneruje źródło.
 \subsection{wspólna bramka (analogicznie wspólna baza)}
 
 \begin{figure}[H]
@@ -756,7 +761,8 @@ Wprowadzamy powyższe zależności do schematu.
 
 \subsubsection{Wzmocnienie różnicowe}
 
-Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi.
+Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko wejściami różnicowymi. Kiedy nie ma sygnału wspólnego $V_{ic}$ to potencjał w punkcie pomiędzy źródłami się nie zmieni, więc możemy olać źródło prądowe i zewrzeć to do masy (źródło prądowe jest po to, żeby stabilizowało prace obu tranzystorów, a skoro i tak będzie stabilna, to...).
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{roznicowy_roznica.png}
@@ -765,15 +771,18 @@ Chcemy tylko sygnał różnicowy, zwieramy więc $V_{ic}$ i zajmujemy się tylko
 Mamy tylko sygnał różnicowy. Potencjał przy gałęzi ze wspólnymi źródłami się nie zmieni przy zmianach napięcia $V_{id}$, więc zwieramy go do masy. Układ jest symetryczny, więc analizujemy tylko połówkę:
 \begin{figure}[H]
 \centering
-
 \includegraphics[width=0.5\textwidth]{roznicowy_roznica_malosyg.png}
 \end{figure}
 
+Powyższy układ to nic innego jak wspólne źródło.
+
 Po \textbf{prostych} obliczeniach:
-\begin{align*}
-\dfrac{V_{od}}{2}&=-g_{m}\dfrac{V_{id}}{2}r_{ds}\parallel R_{L} \\
+\begin{equation}
+\dfrac{V_{od}}{2} =-g_{m}\dfrac{V_{id}}{2}r_{ds}\parallel R_{L} \\
+\end{equation}
+\begin{equation}
 A_{dm}=\dfrac{V_{od}}{V_{id}}=-g_{m} r_{ds} \parallel R_{L}
-\end{align*}
+\end{equation}
 
 $A_{dm}$ to \textbf{wzmocnienie różnicowe} (wzmocnienie układu dla symetrycznego sygnału różnicowego).
 
@@ -808,6 +817,24 @@ CMMR=\dfrac{A_{dm}}{A_{cm}}
 \end{equation}
 
 \section{Bramki CMOS}
+\subsection{Wstęp}
+Cechy:
+\begin{itemize}
+\item niski pobór mocy - moc statyczna = 0 (statyczna - gdy nie ma zmian zegara)
+\item skalowalność  - tzn że malutkie mogą być
+\item w ciul tanie
+\item $r_{in} \rightarrow \inftyą w m$ 
+\end{itemize}
+
+Algebra Bool'a:
+\begin{itemize}
+\item $\cdot$ - AND
+\item  $+$ - OR
+\item $-$ - NOT
+\end{itemize}
+
+
+
 \subsection{Inwerter}
 \begin{figure}[H]
 \centering
@@ -831,7 +858,7 @@ Suma (alternatywa):
 \includegraphics[width=0.25\textwidth]{suma.png}
 
 Iloczyn (koniunkcja):
-\includegraphics[width=0.25\textwidth]{iloczyn.png}
+\includegraphics[width=0.2\textwidth]{iloczyn.png}
 
 Analogicznie na pMOS-ach, z tym, że elementy są negowane.
 \subsection{Jak robimy funkcję}
@@ -849,8 +876,8 @@ Mamy układ na nMOS-ach, teraz musimy zrobić na pMOS-ach. Na pMOS-ach realizuje
 Połączenie szeregowe - mnożymy x2, równoległe - przechodzi bez zmian:
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.35\textwidth]{wymiar_szer.png}\\
-\includegraphics[width=0.35\textwidth]{wymiar_rown.png}
+\includegraphics[width=0.2\textwidth]{wymiar_szer.png}\\
+\includegraphics[width=0.2\textwidth]{wymiar_rown.png}
 \end{figure}
 
 Od dołu, na wejściu nMOS mamy $\dfrac{W}{L}$, natomiast na wejściu pMOS $\dfrac{2W}{L}$, ponieważ chcemy, żeby narastanie i opadanie było tak samo szybkie (na pMOS-ie musi być szerszy kanał).
@@ -860,5 +887,46 @@ Dla przykładu wymiarowanie powyższego układu:
 \centering
 \includegraphics[width=0.5\textwidth]{F_wymiar.png}
 \end{figure}
+
+\section{Przerzutniki i zatrzaski}
+
+\subsection{Metody realizacji pamięci statycznej i dynamicznej}
+Pamięci dostępne dopóki włączone jest zasilanie.\\
+\\
+\textbf{Pamięć statyczna} \\
+Każdy bit zapamiętywany jest przez przerzutnik, każdy przerzutnik składa się z kilku bramek logicznych, każda bramka logiczna składa się z kliku tranzystorów. Przerzutnik zapamiętuje swój stan aż do jego ponownej zmiany (o ile dostarczane jest zasilanie).\\
+Zapamiętywanie stanu odbywa się przez dodatnie \textbf{sprzężenie zwrotne} tzn. część wyjść bramki wewnątrz przerzutnika musi wracać z powrotem do wejść. Dzięki temu jeśli nie ma zmian, stan jest utrzymywany.\\
+Pamięci statyczne są szybkie, ale składają się w sumie z co najmniej 6 tranzystorów, przez co są trudne i drogie do zrealizowania. \\
+\\
+\textbf{Pamięć dynamiczna} \\
+Każdy bit zapamiętywany jest przez kondensator sterowany tranz. CMOS. Kondensator naładowany ładunkiem elektrycznym utrzymuje ten stan. Są to bardzo, bardzo mało kondensatorki. Ich stan musi być nieustannie \textbf{odświeżany}, bo szybko się rozładowuje (czas w ms).  Do odświeżania zawartości kondensatora stosuje się specjalne obwody. Jest wolniejsza, ale można osiągnąć dużo większe pojemności dzięki prostocie.
+
+\subsection{Przerzutniki i zatrzaski}
+Układy przenoszące wejście na wyjście w zależności od stanu zegara.\\
+\\
+\textbf{Przerzutniki} \\
+Przenoszą IN na OUT przy odpowiednim \textbf{zboczu zegara} (opadającym 1->0 albo narastającym 0->1) - tzn. przy jego zmianie\\
+\\
+\textbf{Zatrzaski} \\
+Przenoszą IN na OUT przy odpowiednim \textbf{poziomie zegara} \\
+\\
+Przykład zatrzasku statycznego (podstawowy):
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{zatrzask_stat_1.png}
+\end{figure}
+Przykład zatrzasku statycznego ("Prawidłowa realizacja zatrzasku"):
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{zatrzask_stat_2.png}
+\end{figure}
+
+Przykład przerzutnika dynamicznego (z 2 zatrzasków szeregowo, Master-Slave) :
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{przerzutnik_dyn_1.png}
+\end{figure}
+
+
 
 \end{document}
