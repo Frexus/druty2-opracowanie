@@ -12,9 +12,6 @@
 \begin{document}
 \maketitle
 
-\newpage
-\tableofcontents
-\newpage
 \tableofcontents
 \newpage
 
@@ -37,8 +34,6 @@ Włąściwa polaryzacja tranzystora bipolarnego:
 & npn & pnp \\
 \hline
 $V_{BE}$ & $\geq 0.7V$ & $\leq -0.7V$ \\ 
-
-$V_{CE}$ & $> -200mV$ & $< 200mV$\\ 
 
 $V_{CE}$ & $> 200mV$ & $< -200mV$\\ 
 \end{tabular}
@@ -914,7 +909,7 @@ Przenoszą IN na OUT przy odpowiednim \textbf{zboczu zegara} (opadającym 1->0 a
 \textbf{Zatrzaski} \\
 Przenoszą IN na OUT przy odpowiednim \textbf{poziomie zegara} \\
 \\
-Przykład zatrzasku statycznego (podstawowy):
+Przykład zatrzasku statycznego (podstawowy, UWAGA - na wyjściu ma negacje):
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{zatrzask_stat_1.png}
@@ -925,7 +920,13 @@ Przykład zatrzasku statycznego ("Prawidłowa realizacja zatrzasku"):
 \includegraphics[width=0.5\textwidth]{zatrzask_stat_2.png}
 \end{figure}
 
-Przykład przerzutnika dynamicznego (z 2 zatrzasków szeregowo, Master-Slave) :
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{zatrzask_schemat.png}
+\caption{Schemat zatrzasku na dwóch przerzutnikach}
+\end{figure}
+
+Przykład przerzutnika dynamicznego (z 2 zatrzasków(?) szeregowo, Master-Slave) :
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{przerzutnik_dyn_1.png}
